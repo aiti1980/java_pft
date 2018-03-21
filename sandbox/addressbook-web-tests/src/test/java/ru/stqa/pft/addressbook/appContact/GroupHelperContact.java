@@ -20,9 +20,7 @@ public class GroupHelperContact {
     }
 
     public void fillContactForm(ContactData contactData) {
-        wd.findElement(By.name("firstname")).click();
-        wd.findElement(By.name("firstname")).clear();
-        wd.findElement(By.name("firstname")).sendKeys(contactData.getName());
+      type(contactData, By.name("firstname"));
         wd.findElement(By.name("lastname")).click();
         wd.findElement(By.name("lastname")).clear();
         wd.findElement(By.name("lastname")).sendKeys(contactData.getLastName());
@@ -35,7 +33,13 @@ public class GroupHelperContact {
         sendFormCreateContact();
     }
 
-    private void sendFormCreateContact() {
+  private void type(ContactData contactData) {
+    wd.findElement(locator).click();
+    wd.findElement(locator).clear();
+    wd.findElement(locator).sendKeys(contactData.getName());
+  }
+
+  private void sendFormCreateContact() {
         wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
     }
 
