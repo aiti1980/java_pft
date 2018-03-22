@@ -14,14 +14,14 @@ import java.util.concurrent.TimeUnit;
 public class ApplicationManagerContact {
     FirefoxDriver wd;
 
-    private GroupHelperContact groupHelperContact;
+    private ContactHelper contactHelper;
     private SessionHelperGroupAndContact sessionHelperGroupAndContact;
 
     public void init() {
        wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
       wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
   wd.get("http://localhost/addressbook/");
-        groupHelperContact = new GroupHelperContact(wd);
+        contactHelper = new ContactHelper(wd);
 sessionHelperGroupAndContact = new SessionHelperGroupAndContact(wd);
 sessionHelperGroupAndContact.login("user", "pass", By.xpath("//form[@id='LoginForm']/input[3]"), "admin", "secret");
     }
@@ -31,7 +31,7 @@ sessionHelperGroupAndContact.login("user", "pass", By.xpath("//form[@id='LoginFo
         wd.quit();
     }
 
-    public GroupHelperContact getGroupHelperContact() {
-        return groupHelperContact;
+    public ContactHelper getContactHelper() {
+        return contactHelper;
     }
 }

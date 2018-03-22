@@ -8,9 +8,9 @@ public class ContactCreationTests extends TestBaseContact{
     @Test
     public void testsContactCreation() {
 
-        appContact.getGroupHelperContact().initContactCreation();
-        appContact.getGroupHelperContact().fillContactForm(new ContactData("pavel", "sidorenko", "9997772211", "sidorenko-p@inbox.ru"));
-        appContact.getGroupHelperContact().returnHomePage();
+        appContact.getContactHelper().initContactCreation();
+        appContact.getContactHelper().fillContactForm(new ContactData("pavel", "sidorenko", "murzick", "sidorenko-p@inbox.ru"));
+        appContact.getContactHelper().returnHomePage();
     }
 
 }

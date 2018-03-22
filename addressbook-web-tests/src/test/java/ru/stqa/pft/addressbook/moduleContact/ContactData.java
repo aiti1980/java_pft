@@ -1,22 +1,20 @@
 package ru.stqa.pft.addressbook.moduleContact;
 
 public class ContactData {
-  private final String name;
+  private final String firstName;
   private final String lastName;
   private final String mobile;
   private final String email;
 
-  public ContactData(String name, String lastName, String mobile, String email) {
-    this.name = name;
+  public ContactData(String firstName, String lastName, String mobile, String email) {
+    this.firstName = firstName;
     this.lastName = lastName;
     this.mobile = mobile;
     this.email = email;
   }
 
-  public String getName() {
-    return name;
+  public String getFirstName() { return firstName;
   }
-
   public String getLastName() {
     return lastName;
   }
