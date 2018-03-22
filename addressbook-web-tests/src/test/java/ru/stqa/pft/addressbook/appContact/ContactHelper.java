@@ -19,17 +19,12 @@ public class ContactHelper extends HelperBase {
     click(By.linkText("home page"));
   }
 
-  private void sendFormCreateContact() {
-    click(By.name("submit"));
-  }
-
-
   public void fillContactForm(ContactData contactData) {
     type(By.name("firstname"), contactData.getFirstName());
     type(By.name("lastname"), contactData.getLastName());
     type(By.name("mobile"), contactData.getMobile());
     type(By.name("email"), contactData.getEmail());
-    sendFormCreateContact();
+
   }
 
   public void initContactCreation() {
@@ -44,23 +39,14 @@ public class ContactHelper extends HelperBase {
     click(By.xpath("//table[@id='maintable']/tbody/tr[3]/td[8]/a/img"));
   }
 
-//public void initGroupModification() {
-//click(By.xpath("//table[@id='maintable']/tbody/tr[3]/td[8]/a/img"));}
- // public void selectContact() {click(By.name("selected[]"));
- // }
-public void clickContactModification(){
-  click(By.xpath("//form[@adressbook='']//input"));
-
-  }
   public void modifiyContactModification(){
     click(By.name("modifiy"));
   }
-public void submitContactModification() {
- click(By.name("update"));
- }
-public void selectContactModificaion()
- {
-click(By.xpath("//table[@id='maintable']/tbody/tr[4]/td[7]/a/img"));
-}
-    //div[@id='content']/form[1]
+  public void submitContactModification()
+  {click(By.xpath("//div[@id='content']/form[1]/input[22]"));}
+  public void selectContactModificaion()
+  {
+    click(By.xpath("//table[@id='maintable']/tbody/tr[4]/td[7]/a/img"));
   }
+
+}
